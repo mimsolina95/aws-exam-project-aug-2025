@@ -39,7 +39,7 @@ jobs:
           echo "Synth success"
 
       - name: Bootstrap env
-        run: cdk bootstrap aws://ACCOUNT_ID/REGION
+        run: cdk bootstrap aws://${{ secrets.AWS_ACCESS_KEY_ID }}/${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
           aws-region: eu-central-1
           account_id: 521926168998
