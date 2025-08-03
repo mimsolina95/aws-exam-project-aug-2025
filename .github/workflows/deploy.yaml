@@ -37,6 +37,13 @@ jobs:
           npm install -g aws-cdk
           cdk synth
           echo "Synth success"
+
+      - name: Bootstrap env
+        run: cdk bootstrap aws://ACCOUNT_ID/REGION
+        with:
+          aws-region: eu-central-1
+          account_id: 521926168998
+
       - name: Deploy
         run: |
           cdk deploy --require-approval never # avoid getting the process stuck with this property
