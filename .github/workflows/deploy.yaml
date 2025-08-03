@@ -24,7 +24,6 @@ jobs:
 
       - name: Install deps
         run: npm install
-        working-directory: aws-exam-project-aug-2025
 
       - name: Configure credentials
         uses: aws-actions/configure-aws-credentials@v4.0.2
